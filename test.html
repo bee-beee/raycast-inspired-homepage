@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QuickLauncher — Keyboard-first Workflow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="test.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">QuickLauncher</div>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#docs">Docs</a>
+      </nav>
+      <button class="cta" id="openCmd">Open ⌘K</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="reveal">Launch, automate, and control — right from your keyboard.</h1>
+          <p class="reveal delay">A keyboard-first launcher and workflow hub that keeps you in flow. Fast, extensible, and delightful.</p>
+          <div class="hero-actions reveal delay-2">
+            <a class="btn primary" href="#download">Try it free</a>
+            <a class="btn ghost" href="#docs">Get started</a>
+          </div>
+        </div>
+
+        <div class="hero-demo reveal delay-3">
+          <div class="mock-window">
+            <div class="mw-header">
+              <div class="dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mw-title">Quick command</div>
+            </div>
+
+            <div class="mw-body">
+              <div class="cmd-prompt">
+                <div class="cmd-input" id="cmdInput" tabindex="0">Search apps, files, snippets...</div>
+                <ul class="suggestions" id="suggestions">
+                  <!-- populated by JS -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <svg class="bg-blob" viewBox="0 0 800 400" preserveAspectRatio="none">
+        <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#9b5cff" offset="0"/><stop stop-color="#00d0ff" offset="1"/></linearGradient></defs>
+        <path d="M0,120 C120,50 260,5 420,50 C580,95 700,160 800,120 L800,400 L0,400 Z" fill="url(#g)" opacity="0.12"></path>
+      </svg>
+    </section>
+
+    <section id="features" class="features container">
+      <h2 class="section-title reveal">Powerful features, minimal friction</h2>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-icon">⌘</div>
+          <h3>Keyboard-first</h3>
+          <p>Open actions instantly with a single keystroke, and keep your hands on the keyboard.</p>
+        </article>
+
+        <article class="card reveal delay-1">
+          <div class="card-icon">⚙️</div>
+          <h3>Extensible</h3>
+          <p>Create and share automations and snippets. Integrate with tools you already use.</p>
+        </article>
+
+        <article class="card reveal delay-2">
+          <div class="card-icon">✨</div>
+          <h3>Fast & light</h3>
+          <p>Designed for speed — low latency and smooth interactions make workflows feel instant.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="download" class="download container reveal">
+      <h2>Ready to try?</h2>
+      <p>Download the app or explore the docs and plugins to craft your workflow.</p>
+      <div class="download-buttons">
+        <a class="btn primary" href="#">Download for macOS</a>
+        <a class="btn ghost" href="#docs">Browse plugins</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div>© QuickLauncher • Built for focus</div>
+      <div class="small-links">
+        <a href="#docs">Docs</a> · <a href="#features">Features</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="commandOverlay" class="overlay hidden" aria-hidden="true">
+    <div class="overlay-card" role="dialog" aria-modal="true">
+      <input id="overlayInput" class="overlay-input" placeholder="Type a command or search..." autofocus>
+      <ul id="overlayList" class="overlay-list"></ul>
+      <div class="overlay-hint">Press Esc to close</div>
+    </div>
+  </div>
+
+  <script src="test.js"></script>
+</body>
+</html>
